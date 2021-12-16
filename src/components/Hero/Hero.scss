@@ -1,0 +1,72 @@
+.hero {
+  position: relative;
+
+  .poster {
+    width: 100%;
+    position: absolute;
+  }
+
+  .content {
+    position: relative;
+    padding-left: 4%;
+    padding-top: 20%;
+    margin-bottom: 8%;
+    max-width: 35%;
+
+    .title {
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+
+      font-size: 48px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);
+    }
+
+    .overview {
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+
+      margin: 0.8rem 0;
+      font-weight: 400;
+      font-size: 1.4vw;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);
+    }
+  }
+}
+
+.cta {
+  display: flex;
+  gap: 0.5rem;
+
+  button {
+    display: inline-flex;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: 0.3s;
+
+    background: white;
+    font-size: 1rem;
+    font-weight: bold;
+
+    padding: 8px 24px;
+    margin-top: 0.5rem;
+
+    border-radius: 4px;
+    border: none;
+  }
+
+  button:nth-child(1):hover {
+    background-color: rgba(255, 255, 255, 0.75);
+  }
+
+  button:nth-child(2) {
+    background-color: rgba(109, 109, 110, 0.7);
+    color: white;
+    &:hover {
+      background-color: rgba(109, 109, 110, 0.4);
+    }
+  }
+}

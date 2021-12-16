@@ -1,0 +1,20 @@
+header {
+  position: fixed;
+  padding: 0 4%;
+  height: 68px;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  transition: 0.3s;
+  z-index: 2;
+
+  &.active {
+    background-color: black;
+  }
+  .right-nav {
+    display: flex;
+    gap: 8px;
+  }
+}

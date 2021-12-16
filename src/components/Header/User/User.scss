@@ -1,0 +1,18 @@
+.user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  .user-logo {
+    height: 32px;
+    width: 32px;
+    border-radius: 4px;
+  }
+  .fa-caret-down {
+    font-size: 12px;
+    transition: transform 367ms cubic-bezier(0.21, 0, 0.07, 1);
+  }
+  &:hover .fa-caret-down {
+    transform: rotate(180deg);
+  }
+}
