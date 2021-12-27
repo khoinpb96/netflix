@@ -5,12 +5,26 @@
   }
   user-select: none;
 
+  &:hover {
+    .pagi-container {
+      opacity: 1;
+    }
+    button {
+      i {
+        opacity: 1 !important;
+      }
+    }
+  }
+
   .pagi-container {
+    opacity: 0;
     position: absolute;
     top: 0;
     right: 4%;
     display: flex;
     gap: 2.5px;
+    transform: translateY(40px);
+    transition: 0.3s;
 
     .pagi {
       width: 8px;
@@ -50,17 +64,20 @@
     button {
       position: absolute;
       top: 50%;
-      height: 100%;
-      width: 4vw;
       transform: translate(0, -50%);
+      height: 100%;
+      width: 3.8vw;
 
-      background: rgba(0, 0, 0, 0.5);
       color: white;
       font-size: 1.4rem;
       border: none;
       cursor: pointer;
-
       transition: 0.3s;
+
+      i {
+        opacity: 0;
+        transition: 0.3s;
+      }
 
       &:hover {
         i {
@@ -69,16 +86,14 @@
       }
     }
 
-    i {
-      transition: 0.3s;
-    }
-
     .prev-btn {
       left: 0%;
+      background: linear-gradient(to left, transparent, rgba(0, 0, 0, 0.85));
     }
 
     .next-btn {
       right: 0%;
+      background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.85));
     }
   }
 }

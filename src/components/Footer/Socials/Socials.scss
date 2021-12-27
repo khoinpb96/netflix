@@ -1,0 +1,15 @@
+.socials {
+  display: flex;
+  gap: 1rem;
+  a {
+    color: grey;
+    padding: 4px;
+    transition: 0.3s;
+    &:hover {
+      color: white;
+    }
+  }
+  i {
+    font-size: 22px;
+  }
+}

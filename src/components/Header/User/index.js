@@ -9,6 +9,14 @@ export default function User() {
         className="user-logo"
       />
       <i className="fas fa-caret-down" />
+      <div className="user-popup">
+        <ul>
+          <li>Manage Profiles</li>
+          <li>Account</li>
+          <li>Help Center</li>
+          <li>Sign out from Netflix</li>
+        </ul>
+      </div>
     </span>
   );
 }

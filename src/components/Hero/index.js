@@ -23,11 +23,13 @@ export default function Hero() {
 
   return (
     <div className="hero">
-      <img
-        src={`${base_url}${img_size}${data.backdrop_path}`}
-        alt={data.title}
-        className="poster"
-      />
+      <div className="poster">
+        <img
+          src={`${base_url}${img_size}${data.backdrop_path}`}
+          alt={data.title}
+        />
+      </div>
+
       <div className="content">
         <h2 className="title">{data.title}</h2>
         <p className="overview">{data.overview}</p>

@@ -1,0 +1,20 @@
+.member-links {
+  font-size: 13px;
+  list-style-type: none;
+  columns: 150px 4;
+
+  margin: 1rem 0;
+
+  li {
+    margin-bottom: 0.5rem;
+  }
+
+  a {
+    text-decoration: none;
+    color: grey;
+    transition: 0.3s;
+    &:hover {
+      color: white;
+    }
+  }
+}
