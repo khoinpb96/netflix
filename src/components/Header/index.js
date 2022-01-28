@@ -1,10 +1,32 @@
 import { useState } from "react";
+import styled from "styled-components";
+import { Link } from "react-router-dom";
 
-import "./Header.scss";
 import Search from "./Search";
 import Noti from "./Noti";
 import User from "./User";
-import Navbar from "./Navbar";
+
+const HeaderContainer = styled.header`
+  padding: 0 4%;
+  height: 68px;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  transition: 0.3s;
+  z-index: 2;
+
+  position: fixed;
+
+  &.active {
+    background-color: black;
+  }
+  .right-nav {
+    display: flex;
+    gap: 8px;
+  }
+`;
 
 export default function Header() {
   //Change navbar color when scrolling
@@ -16,13 +38,20 @@ export default function Header() {
   window.addEventListener("scroll", checkScroll);
 
   return (
-    <header className={isScrolled ? "active" : ""}>
-      <Navbar />
+    <HeaderContainer className={isScrolled ? "active " : "header"}>
+      <Link to="/" style={{ marginRight: "auto" }}>
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
+          alt="header logo"
+          className="logo"
+          style={{ width: 92.5 }}
+        />
+      </Link>
       <div className="right-nav">
         <Search />
         <Noti />
         <User />
       </div>
-    </header>
+    </HeaderContainer>
   );
 }

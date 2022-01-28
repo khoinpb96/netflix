@@ -1,7 +1,10 @@
 import { useRef, useState } from "react";
+import { useNavigate } from "react-router";
+
 import "./Search.scss";
 
 export default function Search() {
+  const navigate = useNavigate();
   //Toggle input when click on search icon
   const [isOpened, setIsOpended] = useState(false);
 
@@ -20,16 +23,24 @@ export default function Search() {
           inputRef.current.focus();
         }}
       />
-      <input
-        type="text"
-        placeholder="Titles, people, genres"
-        onBlur={() => {
-          if (!inputVal) setIsOpended(false);
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          navigate(`search?q=${inputVal}`);
         }}
-        value={inputVal}
-        onChange={(e) => setInputVal(e.target.value)}
-        ref={inputRef}
-      />
+      >
+        <input
+          type="text"
+          placeholder="Titles, people, genres"
+          onBlur={() => {
+            if (!inputVal) setIsOpended(false);
+          }}
+          value={inputVal}
+          onChange={(e) => setInputVal(e.target.value)}
+          ref={inputRef}
+        />
+      </form>
+
       <i
         className={`fas fa-times close-btn ${isHidden}`}
         onClick={() => {

@@ -1,9 +1,10 @@
 .slider {
-  position: relative;
-  h3 {
-    padding: 2% 4% 1%;
-  }
   user-select: none;
+  position: relative;
+
+  h3 {
+    margin: 2% 4% 2%;
+  }
 
   &:hover {
     .pagi-container {
@@ -23,7 +24,7 @@
     right: 4%;
     display: flex;
     gap: 2.5px;
-    transform: translateY(40px);
+    // transform: translateY(40px);
     transition: 0.3s;
 
     .pagi {
@@ -41,33 +42,101 @@
     cursor: pointer;
     padding: 0 4vw;
     position: relative;
-    overflow-x: hidden;
-    touch-action: pan-y;
 
     .slides {
       display: flex;
       transition: 0.5s;
-      gap: 0.4vw;
     }
 
     .slide {
       display: flex;
-      min-width: 17.75vw;
-      border-radius: 4px;
-      overflow: hidden;
+      min-width: 18.4vw;
+      padding-right: 4px;
+      transition: 0.3s;
+
+      flex-direction: column;
+      color: #fff;
+      text-decoration: none;
+
+      &:hover {
+        transform: scale(1.5);
+
+        img {
+          border-radius: 4px 4px 0 0;
+        }
+      }
 
       img {
         width: 100%;
+        border-radius: 4px;
+      }
+
+      .slide-detail {
+        background: #181818;
+        overflow: hidden;
+        padding: 1rem;
+        transition: 0.3s;
+        min-height: 10.6vh;
+
+        .buttons {
+          display: flex;
+          gap: 4px;
+
+          i {
+            width: 20px;
+            height: 20px;
+            border: 1px solid #909090;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 8px;
+
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #232323;
+            color: #909090;
+            transition: 0.3s;
+
+            &:hover {
+              border: 1px solid #fff;
+              background-color: #fff;
+              color: #000;
+            }
+          }
+        }
+
+        .title {
+          font-weight: 700;
+          margin: 4px 0;
+          font-size: 1.2vw;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden;
+        }
+
+        .genre {
+          display: flex;
+          gap: 4px;
+          overflow: scroll;
+
+          li {
+            list-style-type: none;
+            font-size: 0.6rem;
+            white-space: nowrap;
+          }
+
+          &::-webkit-scrollbar {
+            display: none;
+          }
+        }
       }
     }
 
     button {
       position: absolute;
-      top: 50%;
-      transform: translate(0, -50%);
+      top: 0;
       height: 100%;
       width: 3.8vw;
-
       color: white;
       font-size: 1.4rem;
       border: none;

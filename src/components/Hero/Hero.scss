@@ -3,9 +3,11 @@
 
   .poster {
     position: absolute;
+    width: 100%;
 
     img {
       width: 100%;
+      filter: brightness(0.8);
     }
 
     &::after {
@@ -27,12 +29,12 @@
     max-width: 35%;
 
     .title {
-      display: -webkit-box;
-      -webkit-line-clamp: 1;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
+      // display: -webkit-box;
+      // -webkit-line-clamp: 1;
+      // -webkit-box-orient: vertical;
+      // overflow: hidden;
 
-      font-size: 48px;
+      font-size: 3.5vw;
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);
     }
 
@@ -54,28 +56,34 @@
   display: flex;
   gap: 0.5rem;
 
-  button {
+  button,
+  a {
     display: inline-flex;
     gap: 0.5rem;
     cursor: pointer;
     transition: 0.3s;
 
     background: white;
-    font-size: 1rem;
+    font-size: 1.5vw;
     font-weight: bold;
 
-    padding: 8px 24px;
+    padding: 1vw 3vw;
     margin-top: 0.5rem;
 
     border-radius: 4px;
     border: none;
   }
 
-  button:nth-child(1):hover {
+  a {
+    text-decoration: none;
+    color: #000;
+  }
+
+  button:hover {
     background-color: rgba(255, 255, 255, 0.75);
   }
 
-  button:nth-child(2) {
+  a {
     background-color: rgba(109, 109, 110, 0.7);
     color: white;
     &:hover {

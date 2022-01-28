@@ -2,7 +2,7 @@ import "./MemberLinks.scss";
 
 export default function MemberLinks() {
   return (
-    <ul class="member-links">
+    <ul className="member-links">
       <li>
         <a href="/browse/subtitles">Audio and Subtitles</a>
       </li>

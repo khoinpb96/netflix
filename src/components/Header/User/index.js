@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./User.scss";
 
 export default function User() {
@@ -12,7 +13,9 @@ export default function User() {
       <div className="user-popup">
         <ul>
           <li>Manage Profiles</li>
-          <li>Account</li>
+          <li>
+            <Link to="/favorite">My Favorites</Link>
+          </li>
           <li>Help Center</li>
           <li>Sign out from Netflix</li>
         </ul>

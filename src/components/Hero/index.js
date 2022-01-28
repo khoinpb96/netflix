@@ -1,47 +1,40 @@
-import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import styled from "styled-components";
 
+import { IMG_BASE_URL, IMG_SIZE } from "../../constants";
+import useFetchMovies from "../../hooks/useFetchMovies";
 import "./Hero.scss";
-import { base_url, request, tmdb } from "../../api";
+
+const HeroImage = styled.div``;
 
 export default function Hero() {
-  const [data, setData] = useState({});
-  const img_size = "original";
-  //Fetch data from API
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res = await tmdb.get(request.getPopular);
-        const data = await res.data.results;
-        const randomIndex = Math.floor(Math.random() * 20);
-        setData(data[randomIndex]);
-      } catch (err) {
-        console.log(err);
-      }
-    };
-    fetchData();
-  }, []);
+  const { data } = useFetchMovies("movie", "popular");
+  //Random 1 movie for hero
+  const randomIndex = Math.floor(Math.random() * 20);
+  const heroData = data[randomIndex];
 
+  if (!heroData) return <p>Loading...</p>;
   return (
     <div className="hero">
       <div className="poster">
         <img
-          src={`${base_url}${img_size}${data.backdrop_path}`}
-          alt={data.title}
+          src={`${IMG_BASE_URL}${IMG_SIZE}${heroData.backdrop_path}`}
+          alt={heroData.title}
         />
       </div>
 
       <div className="content">
-        <h2 className="title">{data.title}</h2>
-        <p className="overview">{data.overview}</p>
+        <h2 className="title">{heroData.title}</h2>
+        <p className="overview">{heroData.overview}</p>
         <span className="cta">
           <button>
             <i className="fas fa-play" />
             Play
           </button>
-          <button>
+          <Link to={`${heroData.id}`}>
             <i className="fas fa-info" />
             More Info
-          </button>
+          </Link>
         </span>
       </div>
     </div>
