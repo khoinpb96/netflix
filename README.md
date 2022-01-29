@@ -14,9 +14,14 @@
 
 ## 📸 Screenshot
 
-![Homepage](/screenshot/homepage-screenshot.png)
-![Slider](/screenshot/slider-screenshot.png)
-![MovieDetail](/screenshot/MovieDetailPage-screenshot.png)
+- **Homepage**
+  ![Homepage](/screenshot/homepage-screenshot.png)
+
+- **Slider**
+  ![Slider](/screenshot/slider-screenshot.png)
+
+- **Moviepage**
+  ![MovieDetail](/screenshot/MovieDetailPage-screenshot.png)
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 
