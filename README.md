@@ -12,6 +12,12 @@
 
 </div>
 
+## 📸 Screenshot
+
+![Homepage](/screenshot/homepage-screenshot.png)
+![Slider](/screenshot/slider-screenshot.png)
+![MovieDetail](/screenshot/MovieDetailPage-screenshot.png)
+
 ## ⛏️ Built Using <a name = "built_using"></a>
 
 - [ReactJS](https://reactjs.org/docs/getting-started.html) - Web Framework
