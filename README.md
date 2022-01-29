@@ -12,17 +12,23 @@
 
 </div>
 
-## ⛏️ Built Using <a name = "built_using"></a>
+## 📸 Screenshot
 
+![Homepage](/screenshot/homepage-screenshot.png)
+![Slider](/screenshot/slider-screenshot.png)
+![MovieDetail](/screenshot/MovieDetailPage-screenshot.png)
+
+
+## ⛏️ Built Using
 - [ReactJS](https://reactjs.org/docs/getting-started.html) - Web Framework
 - [ReduxTK](https://redux-toolkit.js.org/) - State Management
 - [MaterialUI](https://mui.com/) - UI Library
 - [ThemovieDB](https://developers.themoviedb.org/3/movies) - API
 
-## 🚀 Deployment <a name = "deployment"></a>
+## 🚀 Deployment
 
 - [Vercel](https://vercel.com/)
 
-## ✍️ Authors <a name = "authors"></a>
+## ✍️ Authors
 
 - [Kilian](https://github.com/khoinpb96)
