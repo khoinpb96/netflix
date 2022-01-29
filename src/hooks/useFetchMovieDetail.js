@@ -33,7 +33,7 @@ export default function useFetchMovieDetail(type, id) {
     fetchMovieLogo();
     fetchMovieImages();
     // fetchMovieTrailer();
-  }, []);
+  }, [type, id]);
 
   return { images, logo };
 }

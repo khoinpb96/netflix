@@ -5,7 +5,13 @@ import { IMG_BASE_URL, IMG_SIZE } from "../../constants";
 import useFetchMovies from "../../hooks/useFetchMovies";
 import "./Hero.scss";
 
-const HeroImage = styled.div``;
+const HeroImage = styled.div`
+  width: 100%;
+  filter: brightness(0.8);
+  background: url(${(props) => props.src});
+  background-size: cover;
+  padding-top: 56.25%;
+`;
 
 export default function Hero() {
   const { data } = useFetchMovies("movie", "popular");
@@ -17,9 +23,8 @@ export default function Hero() {
   return (
     <div className="hero">
       <div className="poster">
-        <img
+        <HeroImage
           src={`${IMG_BASE_URL}${IMG_SIZE}${heroData.backdrop_path}`}
-          alt={heroData.title}
         />
       </div>
 

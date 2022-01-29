@@ -12,7 +12,7 @@ export default function useFetchMovies(type, request) {
       setData(data.results);
     };
     fetchData();
-  }, []);
+  }, [type, request]);
 
   return { data };
 }

@@ -13,7 +13,7 @@ export default function useFetchMovie(type, id) {
     };
 
     fetchMovie();
-  }, []);
+  }, [type, id]);
 
   return { data };
 }

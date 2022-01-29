@@ -5,6 +5,7 @@ import styled from "styled-components";
 
 import { IMG_BASE_URL } from "../../constants";
 import useFetchMovies from "../../hooks/useFetchMovies";
+import logo from "../../asset/logo.svg";
 import "./Slider.scss";
 
 const SlideLink = styled(Link)`
@@ -15,15 +16,30 @@ const SlideLink = styled(Link)`
       opacity: ${props.active};
     }
   `}
+  display: flex;
+  min-width: 16.66666%;
+  padding-right: 0.3125vw;
+  transition: 0.3s;
+
+  flex-direction: column;
+  color: #fff;
+  text-decoration: none;
 `;
+
+const SlideImage = styled.div`
+  padding-top: 56.25%;
+  background: url(${(props) => props.src});
+  border-radius: 4px 4px 0 0;
+  background-size: cover;
+  position: relative;
+`;
+const img_size = "w780";
 
 export default function Slider({ title, type, request }) {
   const [sliderIndex, setSliderIndex] = useState(0);
   const paginations = [0, 1, 2, 3];
-  const img_size = "w780";
   const [hoverSlide, setHoverSlide] = useState(null);
   const genreList = useSelector((state) => state.genre[type]);
-
   const { data } = useFetchMovies(type, request);
 
   //Handle SlideLink props
@@ -64,10 +80,11 @@ export default function Slider({ title, type, request }) {
                 direction={hoverSlide && setSlideDirection(index + 1)}
                 active={hoverSlide - 1 === index ? 1 : 0}
               >
-                <img
+                <SlideImage
                   src={`${IMG_BASE_URL}${img_size}${slide.backdrop_path}`}
-                  alt={slide.title}
-                />
+                >
+                  <img src={logo} className="logo" alt="logo" />
+                </SlideImage>
 
                 <div className="slide-detail">
                   <div className="buttons">
@@ -100,7 +117,7 @@ export default function Slider({ title, type, request }) {
               if (sliderIndex > 0) setSliderIndex((prev) => prev - 1);
             }}
           >
-            <i classNameName="fas fa-chevron-left" />
+            <i className="fas fa-chevron-left" />
           </button>
         )}
         {sliderIndex !== 3 && (
